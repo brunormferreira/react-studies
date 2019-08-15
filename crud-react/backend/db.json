@@ -1,11 +1,19 @@
 {
-  "users": [{
-    "id": 1,
-    "name": "Bruno Ramires",
-    "email": "megustasouplatao@gmail.com"
-  }, {
-    "id": 2,
-    "name": "Igor Ramires",
-    "email": "esteaqui@empresa.com"
-  }]
+  "users": [
+    {
+      "id": 1,
+      "name": "Bruno Ramires",
+      "email": "megustasouplatao@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Igor Ramires",
+      "email": "esteaqui@empresa.com"
+    },
+    {
+      "name": "Mauricio Pezoa",
+      "email": "pezoa@teste.com",
+      "id": 3
+    }
+  ]
 }
