@@ -13,6 +13,11 @@ const Ingredients = () => {
       { id: Math.random().toString(), ...ingredient }
     ])
   }
+  const removeUserHandler = ingredientId => {
+    setUserIngredients(prevIngredients => 
+      prevIngredients.filter((ingredient) => ingredient !== ingredientId)
+      );
+  }
 
   return (
     <div className="App">
