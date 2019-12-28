@@ -25,7 +25,7 @@ const Ingredients = () => {
 
       <section>
         <Search />
-        <IngredientList ingredients={userIngredients} onRemoveItem={() => {}} />
+        <IngredientList ingredients={userIngredients} onRemoveItem={removeUserHandler} />
       </section>
     </div>
   );
