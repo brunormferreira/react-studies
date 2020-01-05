@@ -7,8 +7,8 @@ import Search from './Search';
 
 const Ingredients = () => {
   const [userIngredients, setUserIngredients] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState()
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState();
 
   useEffect(() => {
     console.log('RENDERING INGREDIENTS', userIngredients);
@@ -19,14 +19,14 @@ const Ingredients = () => {
   }, []);
 
   const addIngredientHandler = ingredient => {
-    setIsLoading(true)
+    setIsLoading(true);
     fetch('https://react-hooks-3a026.firebaseio.com/ingredients.json', {
       method: 'POST',
       body: JSON.stringify(ingredient),
       headers: { 'Content-Type': 'application/json' }
     })
       .then(response => {
-        setIsLoading(false)
+        setIsLoading(false);
         return response.json();
       })
       .then(responseData => {
@@ -38,25 +38,25 @@ const Ingredients = () => {
   };
 
   const removeIngredientHandler = ingredientId => {
-    setIsLoading(true)
+    setIsLoading(true);
     fetch(
       `https://react-hooks-3a026.firebaseio.com/ingredients/${ingredientId}.json`,
       {
         method: 'DELETE'
       }
     ).then(response => {
-      setIsLoading(false)
+      setIsLoading(false);
       setUserIngredients(prevIngredients =>
         prevIngredients.filter(ingredient => ingredient.id !== ingredientId)
       );
     }).catch(error => {
-      setError('Something went wrong!')
-      setIsLoading(false)
+      setError('Something went wrong!');
+      setIsLoading(false);
     })
   };
 
   const clearError = () => {
-    setError(null)
+    setError(null);
   }
 
   return (
